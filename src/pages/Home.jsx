@@ -7,7 +7,7 @@ function Home() {
   return (
     <div>
       <div>
-        <Banner img={banner} title="Titre de la page" />
+        <Banner img={banner} title="Chez vous, partout et ailleurs" />
       </div>
       <div className="inner">
         <div className="home_location_container">

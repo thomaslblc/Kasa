@@ -1,11 +1,11 @@
-import BannerAbout from "../components/Banner/BannerAbout";
+import Banner from "../components/Banner/Banner";
 import banner from "./../img/Banner_2.jpg";
 
 function About() {
   return (
     <div>
       <div>
-        <BannerAbout img={banner}/>
+        <Banner img={banner} title=""/>
       </div>
       <div class="inner">
         <div class="tiles">
