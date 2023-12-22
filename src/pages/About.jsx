@@ -1,5 +1,6 @@
 import Banner from "../components/Banner/Banner";
 import banner from "./../img/Banner_2.jpg";
+import Collapse from "../components/Collapse";
 
 function About() {
   return (
@@ -7,23 +8,20 @@ function About() {
       <div>
         <Banner img={banner} title=""/>
       </div>
-      <div class="inner">
-        <div class="tiles">
-          <div class="tile">
-            <p>Fiabilité</p>
-            <i class="fa-solid fa-chevron-up"></i>
-          </div>
-          <div class="tile">
+      <div className="inner">
+        <div className="tiles">
+          < Collapse title="Fiabilité" content="hbifghiuh uifhiguhrhh eehg rh g." />
+          <div className="tile">
             <p>Respect</p>
-            <i class="fa-solid fa-chevron-up"></i>
+            <i className="fa-solid fa-chevron-up"></i>
           </div>
-          <div class="tile">
+          <div className="tile">
             <p>Service</p>
-            <i class="fa-solid fa-chevron-up"></i>
+            <i className="fa-solid fa-chevron-up"></i>
           </div>
-          <div class="tile">
+          <div className="tile">
             <p>Sécurité</p>
-            <i class="fa-solid fa-chevron-up"></i>
+            <i className="fa-solid fa-chevron-up"></i>
           </div>
         </div>
       </div>
