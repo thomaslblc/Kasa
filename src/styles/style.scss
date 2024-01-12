@@ -34,6 +34,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    a {
+      img {
+        transition: ease all 250ms;
+      }
+      &:hover {
+        img {
+          opacity: 0.5;
+        }
+      }
+    }
     ul {
       display: flex;
       flex-direction: row;
@@ -61,8 +72,6 @@ header {
 }
 
 main {
-  margin-bottom: $large-value;
-
   .home_location_container {
     background-color: #f6f6f6;
     border-radius: 25px;
@@ -87,6 +96,7 @@ main {
             width: 370px;
             height: 370px;
             z-index: 2;
+            overflow: hidden;
 
             &::after {
               position: absolute;
@@ -98,12 +108,20 @@ main {
                 rgba(#00000080, 0.6),
                 rgba(#ffffff, 0)
               );
+              border-radius: 0 0 10px 10px;
+            }
+
+            &:hover {
+              img {
+                transform: scale(1.1);
+              }
             }
 
             img {
               width: 100%;
               border-radius: 10px;
               height: 100%;
+              transition: ease all 350ms;
             }
           }
 
@@ -111,8 +129,10 @@ main {
             position: absolute;
             z-index: 5;
             margin-left: 20px;
-            max-width: 50%;
+            max-width: 75%;
+            font-weight: normal;
             color: #ffffff;
+            font-size: 22px;
           }
         }
       }
@@ -162,15 +182,66 @@ main {
     border-radius: 5px;
     position: relative;
     align-items: center;
-    margin-bottom: $small-value * 1.5;
+    margin-top: $small-value * 1.5;
+    transition: ease all 350ms;
+
+    &:hover {
+      color: #000000;
+      cursor: pointer;
+    }
 
     p {
       margin: 0;
     }
   }
+  .active {
+    transition: ease-in-out all 500ms;
+    background-color: rgba(#cecece, 0.3);
+    padding: 1.5rem;
+    padding-top: calc(1rem + 10px);
+    top: -10px;
+    position: relative;
+    z-index: -1;
+    font-size: 18px;
+    line-height: 1.6em;
+  }
 }
 
 .location_page_container {
+  .carouselContainer {
+    position: relative;
+    .fa-angle-left {
+      position: absolute;
+      color: #ffffff;
+      font-size: 110px;
+      top: 50%;
+      left: 2%;
+      transform:  translateY(-50%);
+    }
+
+    .fa-angle-right {
+      position: absolute;
+      color: #ffffff;
+      font-size: 110px;
+      top: 50%;
+      right: 2%;
+      transform:  translateY(-50%);
+    }
+
+    .carouselIndex {
+      position: absolute;
+      bottom: 5%;
+      color: #ffffff;
+      left: 50%;
+      transform:  translateX(-50%);
+    }
+  }
+  img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
   .location_infos {
     display: flex;
     justify-content: space-between;
@@ -196,14 +267,15 @@ main {
         max-width: 50%;
         text-align: right;
         margin-right: 20px;
+        font-size: 18px;
       }
 
       .owner_photo {
-        background-color: #000000;
-        opacity: 0.4;
-        height: 50px;
-        width: 50px;
-        border-radius: 50px;
+        img {
+          height: 70px;
+          width: 70px;
+          border-radius: 50px;
+        }
       }
     }
   }
@@ -212,12 +284,14 @@ main {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+    align-items: baseline;
 
     .location_tags {
       ul {
         display: flex;
         flex-direction: row;
         padding: 0;
+        margin-top: 0;
 
         li {
           color: #ffffff;
@@ -233,6 +307,8 @@ main {
 
     .fa-star {
       color: #cecece;
+      font-size: 25px;
+      margin-left: 8px;
 
       &.red {
         color: #ff6060;
@@ -242,23 +318,43 @@ main {
 
   .location_collapses {
     display: flex;
-    width: 100%;
     justify-content: space-between;
-    .tile {
-      background-color: #ff6060;
-      color: #ffffff;
-      padding: 10px 20px;
-      font-size: 24px;
-      width: 40%;
-      display: flex;
-      justify-content: space-between;
-      border-radius: 10px;
-      position: relative;
-      align-items: center;
-      margin-bottom: $small-value * 1.5;
 
-      p {
-        margin: 0;
+    .tileContainer {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      .tile {
+        background-color: #ff6060;
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 24px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px;
+        position: relative;
+        align-items: center;
+        transition: ease all 350ms;
+
+        &:hover {
+          color: #000000;
+          cursor: pointer;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+      .active {
+        transition: ease-in-out all 500ms;
+        background-color: rgba(#cecece, 0.3);
+        padding: 1rem;
+        padding-top: calc(1rem + 10px);
+        top: -10px;
+        position: relative;
+        z-index: -1;
+        font-size: 18px;
+        line-height: 1.6em;
       }
     }
   }

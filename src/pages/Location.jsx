@@ -1,6 +1,8 @@
 import { Navigate, useParams } from "react-router-dom";
 import Logements from "./../data/logements.json";
 import Star from "./../components/Star";
+import Collapse from "../components/Collapse";
+import Carousel from "../components/Carousel";
 
 function Location() {
   const id = useParams().id;
@@ -14,7 +16,7 @@ function Location() {
     return (
       <div className="inner">
         <div className="location_page_container">
-          <img src={location.cover} alt="#" />
+          <Carousel images={location.pictures}/>
           <div className="location_infos">
             <div className="location_name">
               <h1>{location.title}</h1>
@@ -40,14 +42,10 @@ function Location() {
             </div>
           </div>
           <div className="location_collapses">
-            <div className="tile">
-              <p>Description</p>
-              <i className="fa-solid fa-chevron-up"></i>
-            </div>
-            <div className="tile">
-              <p>Équipements</p>
-              <i className="fa-solid fa-chevron-up"></i>
-            </div>
+          < Collapse title="Description" content={location.description} />
+          < Collapse title="Équipements" content={location.equipments.map((equipment, i ) => {
+            return <p key={i} >{equipment}</p>
+          })} />
           </div>
         </div>
       </div>

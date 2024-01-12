@@ -15,7 +15,6 @@ function Collapse({ content, title }) {
                     {content}
                 </div>
             ) : ""}
-
         </div>
     )
 }
