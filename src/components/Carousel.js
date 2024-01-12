@@ -10,7 +10,7 @@ function Carousel({ images }) {
             }}></i>
             {images.map((picture, i) => {
                 return (
-                    <>
+                    <div key={i}>
                     { index === i && (
                         <div>
                         <img src={picture} alt={"Image Carousel"+i} />
@@ -18,7 +18,7 @@ function Carousel({ images }) {
                     </div>
                     )
                     }
-                    </>
+                    </div>
                 )
             })}
             <i className="fa-solid fa-angle-right" onClick={() => {

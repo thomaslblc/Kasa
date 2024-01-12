@@ -31,5 +31,16 @@
       left: 50%;
       transform: translate(-50%, -50%);
       margin: 0;
+
+      @media screen and (max-width: 960px) {
+        text-align: left;
+        font-size: 30px;
+        max-width: 80%;
+      }
+
+      @media screen and (max-width: 640px) {
+        text-align: left;
+        font-size: 26px;
+      }
     }
   }
