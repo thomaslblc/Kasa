@@ -223,6 +223,11 @@ main {
   margin-right: auto;
   margin-top: $small-value;
   margin-bottom: $small-value;
+  overflow: hidden;
+
+  .tileContainer {
+    overflow: hidden;
+  }
 
   .tile {
     background-color: #ff6060;
@@ -234,8 +239,9 @@ main {
     border-radius: 5px;
     position: relative;
     align-items: center;
-    margin-top: $small-value * 1.5;
+    margin-bottom: $small-value * 1.5;
     transition: ease all 350ms;
+    
 
     &:hover {
       color: #000000;
@@ -250,12 +256,12 @@ main {
     background-color: rgba(#cecece, 0.3);
     padding: 1.5rem;
     padding-top: calc(1rem + 10px);
-    top: -10px;
+    top: -30px;
     position: relative;
     z-index: -1;
     font-size: 18px;
     line-height: 1.6em;
-    transition: 0.4s max-height;
+    animation: collapse 1s ;
   }
 
   .fa-chevron-up {
