@@ -241,7 +241,6 @@ main {
     align-items: center;
     margin-bottom: $small-value * 1.5;
     transition: ease all 350ms;
-    
 
     &:hover {
       color: #000000;
@@ -261,7 +260,7 @@ main {
     z-index: -1;
     font-size: 18px;
     line-height: 1.6em;
-    animation: collapse 1s ;
+    animation: collapse 1s;
   }
 
   .fa-chevron-up {
@@ -331,73 +330,97 @@ main {
   .location_infos {
     display: flex;
     justify-content: space-between;
+    margin-top: $large-value;
+    margin-bottom: $large-value;
 
-    .location_name {
+    @media screen and (max-width: 960px) {
+      flex-direction: column;
+    }
+
+    .location_infos_bloc_1 {
       h1 {
         font-weight: normal;
         font-size: 36px;
-        margin-bottom: 0;
+        margin: 0;
       }
 
       p {
         font-size: 18px;
       }
+
+      .location_tags {
+        ul {
+          display: flex;
+          flex-direction: row;
+          padding: 0;
+          margin: 0;
+
+          li {
+            color: #ffffff;
+            background-color: #ff6060;
+            margin-right: 20px;
+            padding: 5px 10px;
+            border-radius: 10px;
+            min-width: 115px;
+            text-align: center;
+          }
+        }
+      }
     }
 
-    .location_owner {
+    .location_infos_bloc_2 {
       display: flex;
-      align-items: center;
-      justify-content: flex-end;
+      flex-direction: column;
+      justify-content: space-between;
 
-      p {
-        max-width: 50%;
-        text-align: right;
-        margin-right: 20px;
-        font-size: 18px;
+      @media screen and (max-width: 960px) {
+        flex-direction: row-reverse;
+        align-items: center;
+        margin-top: $small-value;
       }
-
-      .owner_photo {
-        img {
-          height: 70px;
-          width: 70px;
-          border-radius: 50px;
-        }
-      }
-    }
-  }
-  .location_tags_and_rating {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    align-items: baseline;
-
-    .location_tags {
-      ul {
+      
+      .location_owner {
         display: flex;
-        flex-direction: row;
-        padding: 0;
-        margin-top: 0;
+        align-items: center;
+        justify-content: flex-end;
 
-        li {
-          color: #ffffff;
-          background-color: #ff6060;
+        p {
+          max-width: 50%;
+          text-align: right;
           margin-right: 20px;
-          padding: 5px 10px;
-          border-radius: 10px;
-          min-width: 115px;
-          text-align: center;
+          font-size: 18px;
+        }
+
+        .owner_photo {
+          img {
+            height: 70px;
+            width: 70px;
+            border-radius: 50px;
+
+            @media screen and (max-width: 640px) {
+              height: 50px;
+              width: 50px;
+            }
+          }
         }
       }
-    }
 
-    .fa-star {
-      color: #cecece;
-      font-size: 25px;
-      margin-left: 8px;
+      .location_ratings {
+        display: flex;
+        justify-content: flex-end;
+        .fa-star {
+          color: #cecece;
+          font-size: 25px;
+          margin-left: 8px;
 
-      &.red {
-        color: #ff6060;
+          @media screen and (max-width: 640px) {
+            font-size: 20px;
+          }
+
+          &.red {
+            color: #ff6060;
+          }
+        }
       }
     }
   }
@@ -432,7 +455,6 @@ main {
         border-radius: 10px;
         position: relative;
         align-items: center;
-       
 
         &:hover {
           color: #000000;
@@ -452,7 +474,7 @@ main {
         font-size: 18px;
         top: -10px;
         line-height: 1.6em;
-        animation: collapse 1s ;
+        animation: collapse 1s;
       }
 
       .fa-chevron-up {
