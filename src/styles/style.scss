@@ -6,6 +6,10 @@ body {
   box-sizing: border-box;
 }
 
+img {
+  object-fit: cover;
+}
+
 .inner {
   max-width: 1240px;
   margin-left: auto;
