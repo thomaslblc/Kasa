@@ -9,6 +9,10 @@ $small-value: 1rem;
   margin-bottom: $small-value;
   overflow: hidden;
 
+  @media screen and (max-width: 640px) {
+    max-width: 100%;
+  }
+
   .tileContainer {
     overflow: hidden;
     margin-bottom: $small-value * 1.5;
@@ -24,6 +28,10 @@ $small-value: 1rem;
     border-radius: 10px;
     position: relative;
     align-items: center;
+
+    @media screen and (max-width: 640px) {
+      font-size: 13px;
+    }
 
     &:hover {
       cursor: pointer;
@@ -46,6 +54,10 @@ $small-value: 1rem;
     max-height: 1000px;
     overflow: hidden;
     transition: max-height 1s ease, padding 1s ease;
+    
+    @media screen and (max-width: 640px) {
+      font-size: 13px;
+    }
 
     &.close {
       max-height: 0;
@@ -97,6 +109,10 @@ $small-value: 1rem;
       position: relative;
       align-items: center;
 
+      @media screen and (max-width: 640px) {
+        font-size: 13px;
+      }
+
       &:hover {
         cursor: pointer;
       }
@@ -118,6 +134,10 @@ $small-value: 1rem;
       max-height: 1000px;
       overflow: hidden;
       transition: max-height 1s ease, padding 1s ease;
+
+      @media screen and (max-width: 640px) {
+        font-size: 13px;
+      }
 
       &.close {
         max-height: 0;
