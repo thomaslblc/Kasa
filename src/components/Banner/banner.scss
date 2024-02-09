@@ -4,6 +4,10 @@
     text-align: center;
     margin-bottom: 3rem;
 
+    @media screen and (max-width: 640px) {
+      height: 111px;
+    }
+
     &::before {
       content: "";
       background: rgba(#000000, 0.3);
@@ -40,7 +44,10 @@
 
       @media screen and (max-width: 640px) {
         text-align: left;
-        font-size: 26px;
+        font-size: 24px;
+        left: 4%;
+        width: 68%;
+        transform: translate(0, -50%);
       }
     }
   }
