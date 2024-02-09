@@ -11,6 +11,7 @@ $small-value: 1rem;
 
   .tileContainer {
     overflow: hidden;
+    margin-bottom: $small-value * 1.5;
   }
 
   .tile {
@@ -20,14 +21,11 @@ $small-value: 1rem;
     font-size: 24px;
     display: flex;
     justify-content: space-between;
-    border-radius: 5px;
+    border-radius: 10px;
     position: relative;
     align-items: center;
-    margin-bottom: $small-value * 1.5;
-    transition: ease all 350ms;
 
     &:hover {
-      color: #000000;
       cursor: pointer;
     }
 
@@ -37,14 +35,26 @@ $small-value: 1rem;
   }
   .active {
     background-color: rgba(#cecece, 0.3);
-    padding: 1.5rem;
+    padding: 1rem;
     padding-top: calc(1rem + 10px);
-    top: -30px;
     position: relative;
     z-index: -1;
     font-size: 18px;
+    top: -10px;
     line-height: 1.6em;
-    animation: collapse 1s;
+    animation: ouverture 1s;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 1s ease, padding 1s ease;
+
+    &.close {
+      max-height: 0;
+      padding: 0 1rem;
+    }
+  }
+
+  .activeContent {
+    transition: height 1s ease, padding 1s ease;
   }
 
   .fa-chevron-up {
@@ -88,7 +98,6 @@ $small-value: 1rem;
       align-items: center;
 
       &:hover {
-        color: #000000;
         cursor: pointer;
       }
 
@@ -105,7 +114,19 @@ $small-value: 1rem;
       font-size: 18px;
       top: -10px;
       line-height: 1.6em;
-      animation: collapse 1s;
+      animation: ouverture 1s;
+      max-height: 1000px;
+      overflow: hidden;
+      transition: max-height 1s ease, padding 1s ease;
+
+      &.close {
+        max-height: 0;
+        padding: 0 1rem;
+      }
+    }
+
+    .activeContent {
+      transition: height 1s ease, padding 1s ease;
     }
 
     .fa-chevron-up {
@@ -118,7 +139,7 @@ $small-value: 1rem;
   }
 }
 
-@keyframes collapse {
+@keyframes ouverture {
   0% {
     transform: translateY(-100%);
     opacity: 0.1;
@@ -126,5 +147,17 @@ $small-value: 1rem;
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+
+@keyframes fermeture {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0.1;
   }
 }

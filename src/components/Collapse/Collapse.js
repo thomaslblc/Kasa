@@ -14,11 +14,9 @@ function Collapse({ content, title }) {
                 <p>{title}</p>
                 <i className={`fa-solid fa-chevron-up ${open ? "rotate" : ""}`}></i>
             </div>
-            {open && (
-                <div className="active">
-                    {content}
-                </div>
-            )}
+            <div className={`active ${open ? "" : "close"}`}>
+                <div className="activeContent">{content}</div>
+            </div>
         </div>
     );
 }
