@@ -35,16 +35,15 @@ main {
   .home_location_container {
     background-color: #f6f6f6;
     border-radius: 25px;
+    padding: $large-value;
 
     .location_grid {
       ul {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: auto;
-        margin-right: auto;
-        justify-content: space-between;
-        align-items: center;
-        padding: $large-value;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 0;
+        margin: 0;
+        grid-gap: 30px;
 
         @media screen and (max-width: 960px) {
           display: grid;
@@ -54,7 +53,6 @@ main {
 
         li {
           .location_card {
-            margin-bottom: $large-value;
             position: relative;
             display: flex;
             align-items: flex-end;
