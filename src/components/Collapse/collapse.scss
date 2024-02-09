@@ -1,0 +1,130 @@
+$large-value: 2rem;
+$small-value: 1rem;
+
+.tiles {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $small-value;
+  margin-bottom: $small-value;
+  overflow: hidden;
+
+  .tileContainer {
+    overflow: hidden;
+  }
+
+  .tile {
+    background-color: #ff6060;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    position: relative;
+    align-items: center;
+    margin-bottom: $small-value * 1.5;
+    transition: ease all 350ms;
+
+    &:hover {
+      color: #000000;
+      cursor: pointer;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+  .active {
+    background-color: rgba(#cecece, 0.3);
+    padding: 1.5rem;
+    padding-top: calc(1rem + 10px);
+    top: -30px;
+    position: relative;
+    z-index: -1;
+    font-size: 18px;
+    line-height: 1.6em;
+    animation: collapse 1s;
+  }
+
+  .fa-chevron-up {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .fa-chevron-up.rotate {
+    transform: rotate(180deg);
+  }
+}
+
+.location_collapses {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 960px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .tileContainer {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    @media screen and (max-width: 960px) {
+      width: 100%;
+      margin-bottom: $small-value;
+    }
+
+    .tile {
+      background-color: #ff6060;
+      color: #ffffff;
+      padding: 10px 20px;
+      font-size: 24px;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 10px;
+      position: relative;
+      align-items: center;
+
+      &:hover {
+        color: #000000;
+        cursor: pointer;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+    .active {
+      background-color: rgba(#cecece, 0.3);
+      padding: 1rem;
+      padding-top: calc(1rem + 10px);
+      position: relative;
+      z-index: -1;
+      font-size: 18px;
+      top: -10px;
+      line-height: 1.6em;
+      animation: collapse 1s;
+    }
+
+    .fa-chevron-up {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .fa-chevron-up.rotate {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@keyframes collapse {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

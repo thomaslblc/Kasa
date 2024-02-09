@@ -1,3 +1,5 @@
+import './star.scss';
+
 function Star({ rating }) {
     let stars = [];
     for (let i = 0; i < 5; i++) {

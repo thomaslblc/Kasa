@@ -1,6 +1,6 @@
 import Banner from "../components/Banner/Banner";
 import banner from "./../img/Banner_2.jpg";
-import Collapse from "../components/Collapse";
+import Collapse from "../components/Collapse/Collapse";
 
 function About() {
   return (

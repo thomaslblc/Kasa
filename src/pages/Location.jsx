@@ -1,8 +1,8 @@
 import { Navigate, useParams } from "react-router-dom";
 import Logements from "./../data/logements.json";
-import Star from "./../components/Star";
-import Collapse from "../components/Collapse";
-import Carousel from "../components/Carousel";
+import Star from "../components/Star/Star";
+import Collapse from "../components/Collapse/Collapse";
+import Carousel from "../components/Carousel/Carousel";
 
 function Location() {
   const id = useParams().id;

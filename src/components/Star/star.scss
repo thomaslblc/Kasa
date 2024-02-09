@@ -1,0 +1,17 @@
+.location_ratings {
+  display: flex;
+  justify-content: flex-end;
+  .fa-star {
+    color: #cecece;
+    font-size: 25px;
+    margin-left: 8px;
+
+    @media screen and (max-width: 640px) {
+      font-size: 20px;
+    }
+
+    &.red {
+      color: #ff6060;
+    }
+  }
+}

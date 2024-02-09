@@ -1,0 +1,51 @@
+$large-value: 2rem;
+$small-value: 1rem;
+
+.carouselContainer {
+  position: relative;
+  .fa-angle-left {
+    position: absolute;
+    color: #ffffff;
+    font-size: 110px;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+
+    @media screen and (max-width: 960px) {
+      font-size: 60px;
+    }
+
+    @media screen and (max-width: 640px) {
+      font-size: 40px;
+    }
+  }
+
+  .fa-angle-right {
+    position: absolute;
+    color: #ffffff;
+    font-size: 110px;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+
+    @media screen and (max-width: 960px) {
+      font-size: 60px;
+    }
+
+    @media screen and (max-width: 640px) {
+      font-size: 40px;
+    }
+  }
+
+  .carouselIndex {
+    position: absolute;
+    bottom: 5%;
+    color: #ffffff;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media screen and (max-width: 640px) {
+      display: none;
+    }
+  }
+}
